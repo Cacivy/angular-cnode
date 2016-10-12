@@ -1,0 +1,51 @@
+.content-detail {
+    height: 5rem;
+    padding: 0.5rem 1rem 0.5rem 0;
+    ;
+    border-bottom: 0.1rem solid #80bd01;
+}
+
+.content-detail .avatar {
+    height: 5rem;
+    width: 5rem;
+    margin-right: 1rem;
+    float: left;
+    border-radius: 100px;
+}
+
+.content-detail .content-detail-top {
+    height: 3.5rem;
+}
+
+.content-detail .content-detail-top span.icon {
+    vertical-align: top;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.3rem;
+    font-size: 1.2rem;
+}
+
+.content-detail .content-detail-top span.top {
+    background-color: #80bd01;
+    color: #fff;
+}
+
+.content-detail .content-detail-top span.tab {
+    background-color: #e5e5e5;
+    color: #999;
+}
+
+.content-detail .content-detail-top .title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: calc(100% - 9.8rem);
+    display: inline-block;
+}
+
+.content-detail .content-detail-info {
+    font-size: 1.2rem;
+}
+
+.content-detail .content-detail-info time {
+    margin-left: 1rem;
+}

@@ -1,0 +1,21 @@
+.tabs-ul {
+    width: 100%;
+    padding: 5px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.tabs-ul li {
+    width: 15%;
+    max-width: 6.5rem;
+    padding: 3px 0;
+    text-align: center;
+}
+
+.tabs-ul .active {
+    background-color: #80bd01;
+    color: #fff;
+    border-radius: 3px;
+}

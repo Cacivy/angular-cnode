@@ -1,0 +1,17 @@
+<div class="content-detail" (click)="gotoDetail()">
+	<div class="content-detail-top">
+		<img class="avatar" [src]="topic.author.avatar_url" [alt]="topic.author.loginname">
+    <span *ngIf="topic.top || topic.good" class="icon top">{{topic.top?'置顶':topic.good
+      ?'精华':''}}</span>
+    <span *ngIf="!topic.top && !topic.good" class="icon tab">{{getTab(topic.tab)}}</span>
+    <b class="title">{{topic.title}}</b>
+	</div>
+	<div class="content-detail-info">
+    <i>{{topic.author.loginname}}</i>
+		<time class="float-right">{{topic.last_reply_at | interval}}</time>
+    <span class="float-right">
+      <b class="text-green">{{topic.reply_count}}</b>
+      <span>/{{topic.visit_count}}</span>
+    </span>
+	</div>
+</div>
