@@ -1,6 +1,8 @@
 import { Component, OnInit, SimpleChange } from '@angular/core';
 
 import { Tab } from '../../class/tab'
+import { EventBus } from '../../util/event-bus'
+import { getScrollTop, getWindowHeight, getScrollHeight } from '../../util/dom'
 
 @Component({
 	selector: 'app-head',
@@ -37,22 +39,28 @@ export class HeadComponent implements OnInit {
 
 	check(i) {
 		this.activeIndex = i;
+		EventBus.emit('indexChange', this.tabs[i].val)
 	}
 
 	constructor() { }
 
 	ngOnInit() {
-	}
-
-	changeLog: string[]
-	ngOnChanges(changes: { [propertyName: string]: SimpleChange }) {
-		for (let propName in changes) {
-			let chng = changes[propName];
-			let cur = JSON.stringify(chng.currentValue);
-			let prev = JSON.stringify(chng.previousValue);
-			this.changeLog.push(`${propName}: currentValue = ${cur}, previousValue = ${prev}`);
-			console.log(this.changeLog)
+		var isScroll = false
+		window.onscroll = () => {
+			if (isScroll) {
+				return
+			}
+			// 函数节流
+			isScroll = true
+			setTimeout(() => {
+				isScroll = false
+			}, 300)
+			var scrollHeight = getScrollHeight()
+			var ScrollTop = getScrollTop()
+			var WindowHeight = getWindowHeight()
+			if (scrollHeight - (ScrollTop + WindowHeight) <= 100 ) {
+				EventBus.emit('nextPage', this.tabs[this.activeIndex].val)
+			}
 		}
 	}
-
 }
