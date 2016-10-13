@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Topic } from '../class/topic'
+import { Topic } from '../../class/topic'
 
 @Component({
   selector: 'app-content-detail',

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { TopicParam } from '../class/param'
-import { Topic } from '../class/topic'
+import { TopicParam } from '../../class/param'
+import { Topic } from '../../class/topic'
 
-import { TopicService } from '../topic.service'
+import { TopicService } from '../../service/topic.service'
 
 @Component({
   selector: 'app-content',
