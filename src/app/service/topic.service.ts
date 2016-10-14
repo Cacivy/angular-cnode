@@ -14,6 +14,7 @@ const api = {
 
 @Injectable()
 export class TopicService {
+  index: number = 0
 
   constructor(private http: Http) { }
 

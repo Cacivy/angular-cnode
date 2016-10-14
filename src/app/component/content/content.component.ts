@@ -4,6 +4,7 @@ import { TopicParam } from '../../class/param'
 import { Topic } from '../../class/topic'
 
 import { TopicService } from '../../service/topic.service'
+import { StoreService } from '../../service/store.service'
 import { EventBus } from '../../util/event-bus'
 
 @Component({
@@ -15,11 +16,12 @@ import { EventBus } from '../../util/event-bus'
 export class ContentComponent implements OnInit {
 
   topics: Topic[] = []
-  page: number = 1
+  // page: number = 1
   isRequest: boolean = false
 
   constructor(
-    private topicService: TopicService
+    private topicService: TopicService,
+    private storeService: StoreService
   ) {
 
   }
@@ -32,8 +34,11 @@ export class ContentComponent implements OnInit {
     })
 
     EventBus.on('nextPage', (tab) => {
-      this.page++
-      this.getTopics(this.page, tab)
+      if (this.isRequest) {
+        return
+      }
+      this.storeService.page++
+      this.getTopics(this.storeService.page, tab)
     })
   }
 

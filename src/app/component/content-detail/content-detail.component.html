@@ -1,17 +1,19 @@
-<div class="content-detail" (click)="gotoDetail()">
-	<div class="content-detail-top">
-		<img class="avatar" [src]="topic.author.avatar_url" [alt]="topic.author.loginname">
-    <span *ngIf="topic.top || topic.good" class="icon top">{{topic.top?'置顶':topic.good
+<md-card (click)="gotoDetail()">
+	<md-card-header class="content-detail-top">
+		<img md-card-avatar class="avatar" [src]="topic.author.avatar_url">
+		<md-card-title>
+			<span *ngIf="topic.top || topic.good" class="icon top">{{topic.top?'置顶':topic.good
       ?'精华':''}}</span>
-    <span *ngIf="!topic.top && !topic.good && topic.tab" class="icon tab">{{getTab(topic.tab)}}</span>
-    <b class="title">{{topic.title}}</b>
-	</div>
-	<div class="content-detail-info">
-    <i>{{topic.author.loginname}}</i>
-		<time class="float-right">{{topic.last_reply_at | interval}}</time>
-    <span class="float-right">
+			<span *ngIf="!topic.top && !topic.good && topic.tab" class="icon tab">{{getTab(topic.tab)}}</span>
+			<b class="title">{{topic.title}}</b>
+		</md-card-title>
+		<md-card-subtitle><i>{{topic.author.loginname}}</i></md-card-subtitle>
+	</md-card-header>
+	<md-card-content class="content-detail-info">
+		<time class="float-right mg_l10">{{topic.last_reply_at | interval}}</time>
+		<span class="float-right">
       <b class="text-green">{{topic.reply_count}}</b>
       <span>/{{topic.visit_count}}</span>
-    </span>
-	</div>
-</div>
+		</span>
+	</md-card-content>
+</md-card>

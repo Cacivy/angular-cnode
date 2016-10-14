@@ -12,9 +12,11 @@ import { ContentComponent } from './component/content/content.component';
 import { IntervalPipe } from './pipe/interval.pipe'
 import { routing } from './router/app.routing';
 import { TopicService } from './service/topic.service';
+import { StoreService } from './service/store.service';
 import { ContentDetailComponent } from './component/content-detail/content-detail.component';
 import { IndexComponent } from './component/index/index.component';
 import { TopicComponent } from './component/topic/topic.component';
+import { TopComponent } from './component/top/top.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { TopicComponent } from './component/topic/topic.component';
     ContentDetailComponent,
     IntervalPipe,
     IndexComponent,
-    TopicComponent
+    TopicComponent,
+    TopComponent
   ],
   imports: [
     MaterialModule.forRoot(),
@@ -34,7 +37,8 @@ import { TopicComponent } from './component/topic/topic.component';
     routing
   ],
   providers: [
-    TopicService
+    TopicService,
+    StoreService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,4 +1,4 @@
-.content-detail {
+/*.content-detail {
     height: 5rem;
     padding: 0.5rem 1rem 0.5rem 0;
     ;
@@ -48,4 +48,34 @@
 
 .content-detail .content-detail-info time {
     margin-left: 1rem;
+}*/
+
+span.top {
+    background-color: #80bd01;
+    color: #fff;
 }
+
+span.tab {
+    background-color: #e5e5e5;
+    color: #999;
+}
+
+span.icon {
+    vertical-align: top;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.3rem;
+    font-size: 1.2rem;
+}
+
+.avatar {
+    height: 4rem;
+    width: 4rem;
+}
+
+/*.title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: calc(100% - 22rem);
+    display: inline-block;
+}*/

@@ -1,8 +1,8 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 
-import { Tab } from '../../class/tab'
 import { EventBus } from '../../util/event-bus'
 import { getScrollTop, getWindowHeight, getScrollHeight } from '../../util/dom'
+import { StoreService } from '../../service/store.service'
 
 @Component({
 	selector: 'app-head',
@@ -12,43 +12,19 @@ import { getScrollTop, getWindowHeight, getScrollHeight } from '../../util/dom'
 
 export class HeadComponent implements OnInit {
 
-	tabs: Tab[] = [
-		{
-			text: '全部',
-			val: ''
-		},
-		{
-			text: '精华',
-			val: 'good'
-		},
-		{
-			text: '分享',
-			val: 'share'
-		},
-		{
-			text: '问答',
-			val: 'ask'
-		},
-		{
-			text: '招聘',
-			val: 'job'
-		}
-	]
-
-	activeIndex: number = 0
-
 	// isScroll: boolean = false
 
 	check(i) {
-		this.activeIndex = i;
-		EventBus.emit('indexChange', this.tabs[i].val)
+		this.storeService.index = i
+		EventBus.emit('indexChange', this.storeService.tabs[i].val)
 	}
 
-	constructor() {
+	constructor(private storeService: StoreService) {
+
 	}
 
 	@HostListener('window:scroll', ['$event'])
-	doSomething(event) {
+	scroll(event) {
 		// if (this.isScroll) {
 		// 	return
 		// }
@@ -61,7 +37,12 @@ export class HeadComponent implements OnInit {
 		var ScrollTop = getScrollTop()
 		var WindowHeight = getWindowHeight()
 		if (scrollHeight - (ScrollTop + WindowHeight) <= 50) {
-			EventBus.emit('nextPage', this.tabs[this.activeIndex].val)
+			EventBus.emit('nextPage', this.storeService.tabs[this.storeService.index].val)
+		}
+		if (ScrollTop > WindowHeight && !this.storeService.showToTop) {
+			this.storeService.showToTop = true
+		} else if (ScrollTop < WindowHeight && this.storeService.showToTop) {
+			this.storeService.showToTop = false
 		}
 	}
 
