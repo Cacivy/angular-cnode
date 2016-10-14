@@ -1,0 +1,3 @@
+<div class="content" (scroll)="scroll()">
+    <app-content-detail *ngFor="let item of topics;trackBy: id" [topic]="item"></app-content-detail>
+</div>

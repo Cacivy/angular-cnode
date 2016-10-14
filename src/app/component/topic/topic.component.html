@@ -1,0 +1,4 @@
+<div *ngIf="topic">
+	<h3>{{topic.title}}</h3>
+	<div class="markdown" [innerHTML]="topic.content"></div>
+</div>

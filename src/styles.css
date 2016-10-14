@@ -49,3 +49,7 @@ li {
 .float-right {
     float: right;
 }
+
+.mg_l10 {
+    margin-left: 10px;
+}

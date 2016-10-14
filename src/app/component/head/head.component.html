@@ -1,8 +1,8 @@
 <div class="tabs bg-gray">
   <ul class="tabs-ul ul-across">
     <li class="text-green" 
-    *ngFor="let item of tabs; let i=index" 
-    [ngClass]="{active : i === activeIndex}"
+    *ngFor="let item of storeService.tabs; let i=index" 
+    [ngClass]="{active : i === storeService.index}"
     (click)="check(i)"
     >
       {{item.text}}

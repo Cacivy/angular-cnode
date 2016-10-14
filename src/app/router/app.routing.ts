@@ -1,8 +1,8 @@
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { IndexComponent } from './index/index.component';
-import { TopicComponent } from './topic/topic.component';
+import { IndexComponent } from '../component/index/index.component';
+import { TopicComponent } from '../component/topic/topic.component';
 
 const appRoutes: Routes = [
   {

@@ -1,5 +1,5 @@
 export class TopicParam {
-    constructor(page: number = 1, tab: string = '', limit: number = 10, mdrender: boolean = true) {
+    constructor(page: number = 1, tab: string = '', limit: number = 20, mdrender: boolean = true) {
         this.page = page
         this.tab = tab
         this.limit = limit

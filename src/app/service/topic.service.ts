@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { Http, RequestOptions, RequestMethod } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
-import { Topic } from './class/topic'
-import { TopicParam } from './class/param'
-import { Util } from './util/util'
+import { Topic } from '../class/topic'
+import { TopicParam } from '../class/param'
+import { Util } from '../util/util'
 
 const apiPrefix = 'https://cnodejs.org/api/v1'
 const api = {
@@ -14,6 +14,7 @@ const api = {
 
 @Injectable()
 export class TopicService {
+  index: number = 0
 
   constructor(private http: Http) { }
 
