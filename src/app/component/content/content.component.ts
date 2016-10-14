@@ -43,18 +43,18 @@ export class ContentComponent implements OnInit {
     }
     this.isRequest = true
     this.topicService.getTopics(new TopicParam(page, tab)).then((data: Topic[]) => {
-      if (page > 1) {
-        // 调试发现topics会改变，但是视图不改变
-        data.forEach((x: Topic) => {
-          this.topics.push(x)
-        })
-        // this.topics = this.topics.concat(data)
-      } else {
-        // 正常，视图改变
+      if (page === 1) {
         this.topics = data
+      } else {
+        this.topics = this.topics.concat(data)
       }
+      
       this.isRequest = false
     })
+  }
+
+  scroll(el) {
+    console.log(el)
   }
 
 }

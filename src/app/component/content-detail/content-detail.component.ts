@@ -12,11 +12,12 @@ import { Topic } from '../../class/topic'
 
 export class ContentDetailComponent implements OnInit {
 
-  tabs = {
+  tabs: Object = {
     share: '分享',
     ask: '问答',
     job: '招聘'
   }
+
 
   @Input()
   topic: Topic
@@ -24,6 +25,7 @@ export class ContentDetailComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
+
   }
 
   getTab(tab: string) {

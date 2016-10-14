@@ -1,4 +1,4 @@
-import { Component, OnInit, SimpleChange } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 import { Tab } from '../../class/tab'
 import { EventBus } from '../../util/event-bus'
@@ -37,30 +37,35 @@ export class HeadComponent implements OnInit {
 
 	activeIndex: number = 0
 
+	// isScroll: boolean = false
+
 	check(i) {
 		this.activeIndex = i;
 		EventBus.emit('indexChange', this.tabs[i].val)
 	}
 
-	constructor() { }
+	constructor() {
+	}
+
+	@HostListener('window:scroll', ['$event'])
+	doSomething(event) {
+		// if (this.isScroll) {
+		// 	return
+		// }
+		// // 函数节流
+		// this.isScroll = true
+		// setTimeout(() => {
+		// 	this.isScroll = false
+		// }, 100)
+		var scrollHeight = getScrollHeight()
+		var ScrollTop = getScrollTop()
+		var WindowHeight = getWindowHeight()
+		if (scrollHeight - (ScrollTop + WindowHeight) <= 50) {
+			EventBus.emit('nextPage', this.tabs[this.activeIndex].val)
+		}
+	}
 
 	ngOnInit() {
-		var isScroll = false
-		window.onscroll = () => {
-			if (isScroll) {
-				return
-			}
-			// 函数节流
-			isScroll = true
-			setTimeout(() => {
-				isScroll = false
-			}, 300)
-			var scrollHeight = getScrollHeight()
-			var ScrollTop = getScrollTop()
-			var WindowHeight = getWindowHeight()
-			if (scrollHeight - (ScrollTop + WindowHeight) <= 100 ) {
-				EventBus.emit('nextPage', this.tabs[this.activeIndex].val)
-			}
-		}
+
 	}
 }

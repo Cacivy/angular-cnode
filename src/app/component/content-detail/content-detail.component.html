@@ -3,7 +3,7 @@
 		<img class="avatar" [src]="topic.author.avatar_url" [alt]="topic.author.loginname">
     <span *ngIf="topic.top || topic.good" class="icon top">{{topic.top?'置顶':topic.good
       ?'精华':''}}</span>
-    <span *ngIf="!topic.top && !topic.good" class="icon tab">{{getTab(topic.tab)}}</span>
+    <span *ngIf="!topic.top && !topic.good && topic.tab" class="icon tab">{{getTab(topic.tab)}}</span>
     <b class="title">{{topic.title}}</b>
 	</div>
 	<div class="content-detail-info">

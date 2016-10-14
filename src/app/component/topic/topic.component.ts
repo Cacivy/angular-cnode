@@ -19,6 +19,7 @@ export class TopicComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
     this.route.params.forEach((params: Params) => {
       let id = params['id'];
       this.topicService.getTopicDetail(id).then(data => {
