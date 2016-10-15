@@ -1,21 +1,32 @@
 .tabs-ul {
     width: 100%;
-    padding: 5px 0;
-    display: flex;
+    /*padding: 5px 0;*/
+    height: 30px;
+    /*display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: center;*/
 }
 
 .tabs-ul li {
-    width: 15%;
-    max-width: 6.5rem;
-    padding: 3px 0;
+    float: left;
+    width: 20%;
+    /*max-width: 6.5rem;*/
+    /*padding: 3px 0;*/
     text-align: center;
+    line-height: 28px;
 }
 
-.tabs-ul .active {
+/*.tabs-ul .active {
     background-color: #80bd01;
     color: #fff;
     border-radius: 3px;
+}*/
+
+.line {
+    background-color: #80bd01;
+    height: 2px;
+    width: 20%;
+    margin-left: 0;
+    transition: all .7s;
 }

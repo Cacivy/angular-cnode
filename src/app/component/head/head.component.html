@@ -2,10 +2,10 @@
   <ul class="tabs-ul ul-across">
     <li class="text-green" 
     *ngFor="let item of storeService.tabs; let i=index" 
-    [ngClass]="{active : i === storeService.index}"
     (click)="check(i)"
     >
       {{item.text}}
     </li>
   </ul>
+  <div class="line" [ngStyle]="{'margin-left.%': storeService.index*20}"></div>
 </div>
