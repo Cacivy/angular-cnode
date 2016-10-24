@@ -61,16 +61,21 @@ span.tab {
 }
 
 span.icon {
-    vertical-align: top;
+    vertical-align: middle;
     padding: 0.2rem 0.4rem;
     border-radius: 0.3rem;
     font-size: 1.2rem;
+}
+
+.title {
+    vertical-align: middle;
 }
 
 .avatar {
     height: 40px;
     width: 40px;
 }
+
 
 /*.title {
     overflow: hidden;
