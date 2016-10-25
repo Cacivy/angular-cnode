@@ -17,6 +17,7 @@ import { ContentDetailComponent } from './component/content-detail/content-detai
 import { IndexComponent } from './component/index/index.component';
 import { TopicComponent } from './component/topic/topic.component';
 import { TopComponent } from './component/top/top.component';
+import { ReplyComponent } from './component/reply/reply.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { TopComponent } from './component/top/top.component';
     IntervalPipe,
     IndexComponent,
     TopicComponent,
-    TopComponent
+    TopComponent,
+    ReplyComponent
   ],
   imports: [
     MaterialModule.forRoot(),

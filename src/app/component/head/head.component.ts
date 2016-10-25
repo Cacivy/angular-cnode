@@ -23,28 +23,13 @@ export class HeadComponent implements OnInit {
 
 	}
 
-	@HostListener('window:scroll', ['$event'])
-	scroll(event) {
-		// if (this.isScroll) {
-		// 	return
-		// }
-		// // 函数节流
-		// this.isScroll = true
-		// setTimeout(() => {
-		// 	this.isScroll = false
-		// }, 100)
-		var scrollHeight = getScrollHeight()
-		var ScrollTop = getScrollTop()
-		var WindowHeight = getWindowHeight()
-		if (scrollHeight - (ScrollTop + WindowHeight) <= 50) {
-			EventBus.emit('nextPage', this.storeService.tabs[this.storeService.index].val)
-		}
-		if (ScrollTop > WindowHeight && !this.storeService.showToTop) {
-			this.storeService.showToTop = true
-		} else if (ScrollTop < WindowHeight && this.storeService.showToTop) {
-			this.storeService.showToTop = false
-		}
-	}
+	// @HostListener('window:scroll', ['$event'])
+	// scroll(event) {
+	// 	var scrollHeight = getScrollHeight()
+	// 	var ScrollTop = getScrollTop()
+	// 	var WindowHeight = getWindowHeight()
+		
+	// }
 
 	ngOnInit() {
 

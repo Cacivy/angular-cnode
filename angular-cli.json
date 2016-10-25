@@ -15,7 +15,9 @@
       "prefix": "app",
       "mobile": false,
       "styles": [
-        "styles.css"
+        "styles.css",
+        "markdown.css",
+        "../node_modules/prismjs/themes/prism.css"
       ],
       "scripts": [],
       "environments": {
