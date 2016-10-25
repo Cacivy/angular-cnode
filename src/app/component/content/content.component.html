@@ -1,3 +1,4 @@
 <div class="content" (scroll)="scroll()">
-    <app-content-detail *ngFor="let item of topics;trackBy: id" [topic]="item"></app-content-detail>
+    <app-content-detail [hidden]="isRequest" *ngFor="let item of topics;trackBy: id" [topic]="item"></app-content-detail>
+    <div *ngIf="isRequest">Loading</div>
 </div>
