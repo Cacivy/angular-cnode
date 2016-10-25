@@ -1,20 +1,20 @@
 <div class="content-detail" (click)="gotoDetail()">
-	<div class="content-detail-avatar">
-		<img class="avatar" [src]="topic.author.avatar_url">
-	</div>
-	<div class="content-detail-body">
-			<p class="content-detail-title">
-				<span *ngIf="topic.top || topic.good" class="icon top">{{topic.top?'置顶':topic.good ?'精华':''}}</span>
-				<span *ngIf="!topic.top && !topic.good && topic.tab" class="icon tab">{{getTab(topic.tab)}}</span>
-				<span>{{topic.title}}</span>
-			</p>
-			<div class="content-detail-tips">
-				<span>{{topic.author.loginname}}</span>
-				<time class="float-right mg_l10">{{topic.last_reply_at | interval}}</time>
-				<span class="float-right">
+    <div class="content-detail-avatar">
+        <img class="avatar" [src]="topic.author.avatar_url">
+    </div>
+    <div class="content-detail-body">
+        <p class="content-detail-title">
+            <span *ngIf="topic.top || topic.good" class="icon top">{{topic.top?'置顶':topic.good ?'精华':''}}</span>
+            <span *ngIf="!topic.top && !topic.good && topic.tab" class="icon tab">{{getTab(topic.tab)}}</span>
+            <b>{{topic.title}}</b>
+        </p>
+        <div class="content-detail-tips">
+            <span>{{topic.author.loginname}}</span>
+            <time class="float-right mg_l10">{{topic.last_reply_at | interval}}</time>
+            <span class="float-right">
 				<b class="text-green">{{topic.reply_count}}</b>
 				<span>/{{topic.visit_count}}</span>
-				</span>
-			</div>
-	</div>
+            </span>
+        </div>
+    </div>
 </div>
