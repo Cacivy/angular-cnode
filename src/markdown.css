@@ -1,0 +1,24 @@
+.markdown-text {
+  padding: 10px;
+}
+.markdown-text img {
+  max-width: 100%;
+}
+
+.markdown-text a {
+    color: #80bd01;
+    word-break: break-all;
+}
+
+.markdown-text h2, .markdown-text h3, .markdown-text h4, .markdown-text h5, .markdown-text h6 {
+    position: relative;
+    margin: 10px;
+}
+
+.markdown-text h2:before, .markdown-text h3:before, .markdown-text h4:before, .markdown-text h5:before, .markdown-text h6:before {
+    content: "#";
+    color: #80bd01;
+    position: absolute;
+    left: -15px;
+    font-weight: bold;
+}

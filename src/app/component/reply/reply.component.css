@@ -1,0 +1,43 @@
+
+.avatar {
+	height: 40px;
+	width: 40px;
+	border-radius: 100%;
+}
+
+.reply {
+	background-color: #fff;
+	margin-top: 10px;
+}
+
+.reply-avatar {
+	width: 60px;
+	text-align: center;
+	float: right;
+}
+
+.reply-body {
+	border-bottom: 1px solid #abc;
+	margin-right: 60px;
+	padding: 5px 0 10px 5px;
+}
+
+.reply-author {
+	font-size: 12px;
+}
+
+.reply-title {
+	margin-bottom: 4px;
+}
+
+.reply-tips {
+    padding-left: 10px;
+}
+
+.reply-title>span {
+	vertical-align: middle;
+}
+
+.reply-tips>* {
+	vertical-align: middle;
+}

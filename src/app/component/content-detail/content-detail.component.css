@@ -51,26 +51,61 @@
 }*/
 
 span.top {
-    background-color: #80bd01;
-    color: #fff;
+	background-color: #80bd01;
+	color: #fff;
 }
 
 span.tab {
-    background-color: #e5e5e5;
-    color: #999;
+	background-color: #e5e5e5;
+	color: #999;
 }
 
 span.icon {
-    vertical-align: top;
-    padding: 0.2rem 0.4rem;
-    border-radius: 0.3rem;
-    font-size: 1.2rem;
+	vertical-align: middle;
+	padding: 0.2rem 0.4rem;
+	border-radius: 0.3rem;
+	font-size: 1.2rem;
 }
 
 .avatar {
-    height: 40px;
-    width: 40px;
+	height: 40px;
+	width: 40px;
+	border-radius: 100%;
 }
+
+.content-detail {
+	background-color: #fff;
+	margin-top: 10px;
+}
+
+.content-detail-avatar {
+	width: 60px;
+	text-align: center;
+	float: left;
+}
+
+.content-detail-body {
+	border-bottom: 1px solid #abc;
+	margin-left: 60px;
+	padding: 5px 5px 10px 0;
+}
+
+.content-detail-author {
+	font-size: 12px;
+}
+
+.content-detail-title {
+	margin-bottom: 4px;
+}
+
+.content-detail-title>span {
+	vertical-align: middle;
+}
+
+.content-detail-tips>* {
+	vertical-align: middle;
+}
+
 
 /*.title {
     overflow: hidden;

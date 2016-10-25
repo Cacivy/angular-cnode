@@ -3,7 +3,7 @@ class Author {
     avatar_url: string
 }
 
-class Replies {
+export class Reply {
     id: string
     author: Author
     content: string
@@ -25,5 +25,5 @@ export class Topic {
     visit_count: number
     create_at: Date
     author: Author
-    replies: Replies
+    replies: Reply
 }

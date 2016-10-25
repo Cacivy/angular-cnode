@@ -15,7 +15,9 @@
     /*padding: 3px 0;*/
     text-align: center;
     line-height: 28px;
+    font-weight: bold;
 }
+
 
 /*.tabs-ul .active {
     background-color: #80bd01;
@@ -28,5 +30,5 @@
     height: 2px;
     width: 20%;
     margin-left: 0;
-    transition: all .7s;
+    transition: all .5s;
 }

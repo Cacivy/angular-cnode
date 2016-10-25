@@ -2,6 +2,31 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.17.
 
+# Directory 
+
+```
+.
+├── e2e 测试
+├── node_modules
+├── src
+    └─── app
+        ├── class 类
+        ├── component 组件
+        ├── pipe 管道
+        ├── router 路由
+        ├── service 服务(依赖注入)
+        ├── util 工具
+        └── app.module.ts 应用入口
+    ├── assets 资源
+    ├── environments 环境配置
+    ├── main.ts 入口
+    └──tsconfig.json typescript配置
+├── angular-cli 配置文件
+├── tslint.json
+└── package.json
+
+```
+
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 

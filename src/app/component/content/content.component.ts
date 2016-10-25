@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
 
 import { TopicParam } from '../../class/param'
 import { Topic } from '../../class/topic'
@@ -42,14 +42,21 @@ export class ContentComponent implements OnInit {
     })
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(changes)
+  }
+
   getTopics(page?: number, tab?: string) {
     if (this.isRequest) {
       return
     }
     this.isRequest = true
+    let startTime:number = new Date().valueOf()
     this.topicService.getTopics(new TopicParam(page, tab)).then((data: Topic[]) => {
       if (page === 1) {
-        this.topics = data
+        setTimeout(() => {
+          this.topics = data
+        }, this.topics.length? 500 - (startTime - new Date().valueOf())/1000 : 0)
       } else {
         this.topics = this.topics.concat(data)
       }
