@@ -14,8 +14,10 @@
     /*max-width: 6.5rem;*/
     /*padding: 3px 0;*/
     text-align: center;
-    line-height: 30px;
+    line-height: 28px;
+    font-weight: bold;
 }
+
 
 /*.tabs-ul .active {
     background-color: #80bd01;
