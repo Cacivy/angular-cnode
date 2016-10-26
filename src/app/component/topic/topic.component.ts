@@ -31,7 +31,7 @@ export class TopicComponent implements OnInit {
   @HostListener('window:load', ['$event'])
   load() {
     let doms = document.getElementsByTagName('pre')
-    for(let i = 0; i < doms.length; i++){
+    for (let i = 0; i < doms.length; i++) {
       doms[i].className += 'language-javascript'
       doms[i].innerHTML = Prism.highlight(doms[i].innerText, Prism.languages.javascript)
     }

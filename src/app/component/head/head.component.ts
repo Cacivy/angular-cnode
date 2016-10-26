@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { EventBus } from '../../util/event-bus'
 import { getScrollTop, getWindowHeight, getScrollHeight } from '../../util/dom'
@@ -12,24 +13,14 @@ import { StoreService } from '../../service/store.service'
 
 export class HeadComponent implements OnInit {
 
-	// isScroll: boolean = false
-
 	check(i) {
 		this.storeService.index = i
 		EventBus.emit('indexChange', this.storeService.tabs[i].val)
 	}
 
-	constructor(private storeService: StoreService) {
+	constructor(private storeService: StoreService, private router: Router) {
 
 	}
-
-	// @HostListener('window:scroll', ['$event'])
-	// scroll(event) {
-	// 	var scrollHeight = getScrollHeight()
-	// 	var ScrollTop = getScrollTop()
-	// 	var WindowHeight = getWindowHeight()
-		
-	// }
 
 	ngOnInit() {
 

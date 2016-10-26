@@ -1,4 +1,4 @@
-import { Component, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { TopicParam } from '../../class/param'
 import { Topic } from '../../class/topic'
@@ -13,10 +13,9 @@ import { EventBus } from '../../util/event-bus'
   styleUrls: ['./content.component.css']
 })
 
-export class ContentComponent implements OnInit {
+export class ContentComponent implements OnInit, OnDestroy {
 
   topics: Topic[] = []
-  // page: number = 1
   isRequest: boolean = false
 
   constructor(
@@ -30,7 +29,11 @@ export class ContentComponent implements OnInit {
     this.getTopics()
 
     EventBus.on('indexChange', (val) => {
-      this.getTopics(1, val)
+      if (this.isRequest) {
+        return
+      }
+      this.storeService.page = 1
+      this.getTopics()
     })
 
     EventBus.on('nextPage', (tab) => {
@@ -38,25 +41,30 @@ export class ContentComponent implements OnInit {
         return
       }
       this.storeService.page++
-      this.getTopics(this.storeService.page, tab)
+      this.getTopics()
     })
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    console.log(changes)
+  ngOnDestroy() {
+    this.topics = []
+    this.storeService.page = 1
+    EventBus.remove('indexChange')
+    EventBus.remove('nextPage')
   }
 
-  getTopics(page?: number, tab?: string) {
+  getTopics() {
     if (this.isRequest) {
       return
     }
+    const {page, index, tabs} = this.storeService
+    let tab = tabs[index].val
     this.isRequest = true
     let startTime:number = new Date().valueOf()
     this.topicService.getTopics(new TopicParam(page, tab)).then((data: Topic[]) => {
       if (page === 1) {
         setTimeout(() => {
           this.topics = data
-        }, this.topics.length? 500 - (startTime - new Date().valueOf())/1000 : 0)
+        }, this.topics.length? 500 - (new Date().valueOf() - startTime)/1000 : 0)
       } else {
         this.topics = this.topics.concat(data)
       }

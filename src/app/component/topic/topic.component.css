@@ -2,3 +2,12 @@
     background: #f6f6f6;
     padding: 5px;
 }
+.topic {
+    position: relative;
+    animation:slide .1s ease-in;
+}
+
+@keyframes slide {
+    from {left: 100%}
+    to {left: 0}
+}

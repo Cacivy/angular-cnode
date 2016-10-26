@@ -1,4 +1,4 @@
-<div *ngIf="topic">
+<div *ngIf="topic" class="topic">
 	<app-content-detail [topic]="topic"></app-content-detail>
 	<div class="mg_t10" [innerHTML]="topic.content"></div>
 	<div *ngIf="topic.replies && topic.replies.length"  class="reply-bar">评论</div>
