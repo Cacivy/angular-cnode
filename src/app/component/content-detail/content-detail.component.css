@@ -68,9 +68,18 @@ span.icon {
 }
 
 .avatar {
-	height: 40px;
-	width: 40px;
+	height: 35px;
+	width: 35px;
 	border-radius: 100%;
+}
+
+.name {
+    display: inline-block;
+    width: 50px;
+    font-size: 12px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .content-detail {
@@ -87,7 +96,7 @@ span.icon {
 .content-detail-body {
 	border-bottom: 1px solid #abc;
 	margin-left: 60px;
-	padding: 5px 5px 10px 0;
+	padding: 5px 5px 5px 0;
 }
 
 .content-detail-author {
@@ -98,8 +107,13 @@ span.icon {
 	margin-bottom: 4px;
 }
 
-.content-detail-title>span {
+.content-detail-title>* {
 	vertical-align: middle;
+}
+
+.content-detail-tips {
+    height: 20px;
+    line-height: 20px;
 }
 
 .content-detail-tips>* {

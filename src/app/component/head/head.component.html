@@ -1,7 +1,8 @@
 <div class="tabs bg-gray">
   <ul class="tabs-ul ul-across">
-    <li class="text-green" 
+    <li
     *ngFor="let item of storeService.tabs; let i=index" 
+    [ngClass]="{'text-green': storeService.index === i, 'text-white': storeService.index !== i}"
     (click)="check(i)"
     >
       {{item.text}}

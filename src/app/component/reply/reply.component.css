@@ -1,7 +1,7 @@
 
 .avatar {
-	height: 40px;
-	width: 40px;
+	height: 35px;
+	width: 35px;
 	border-radius: 100%;
 }
 
@@ -28,6 +28,16 @@
 
 .reply-title {
 	margin-bottom: 4px;
+
+}
+
+.name {
+	display: inline-block;
+    width: 50px;
+    font-size: 12px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .reply-tips {
@@ -36,6 +46,11 @@
 
 .reply-title>span {
 	vertical-align: middle;
+}
+
+.reply-tips {
+	height: 20px;
+	line-height: 20px;
 }
 
 .reply-tips>* {

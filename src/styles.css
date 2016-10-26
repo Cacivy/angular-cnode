@@ -37,8 +37,16 @@ li {
     background-color: #80bd01;
 }
 
+.text-white {
+    color: #fff;
+}
+
+.text-gray {
+    color: #777;
+}
+
 .bg-gray {
-    background-color: #f6f6f6;
+    background-color: #444444;
 }
 
 .ul-across {
