@@ -32,7 +32,7 @@ export class StoreService {
 
   index: number = 0
 
-  page: number = 0
+  page: number = 1
 
   showToTop: boolean = false
 

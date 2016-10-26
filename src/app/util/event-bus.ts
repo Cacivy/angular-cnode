@@ -1,12 +1,3 @@
-// class Event {
-//     constructor(name: string, fun: Function) {
-//         this.name = name
-//         this.fun = fun
-//     }
-//     name: string
-//     fun: Function
-// }
-
 export const EventBus = {
     events: [],
 
@@ -21,6 +12,14 @@ export const EventBus = {
         var event = this.events.find(x => x.name === name)
         if (event) {
             event.fun(param)
+        }
+    },
+
+    remove(name: string) {
+        var event = this.events.find(x => x.name === name)
+        if (event) {
+            var index = this.events.indexOf(event)
+            this.events.splice(index, 1)
         }
     }
 }
