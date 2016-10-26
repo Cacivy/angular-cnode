@@ -1,7 +1,7 @@
 .tabs-ul {
     width: 100%;
     /*padding: 5px 0;*/
-    height: 30px;
+    height: 48px;
     /*display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -14,7 +14,7 @@
     /*max-width: 6.5rem;*/
     /*padding: 3px 0;*/
     text-align: center;
-    line-height: 28px;
+    line-height: 48px;
     font-weight: bold;
 }
 

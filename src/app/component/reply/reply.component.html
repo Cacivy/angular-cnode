@@ -1,13 +1,13 @@
 <div class="reply">
 	<div class="reply-avatar">
 		<img class="avatar" [src]="reply.author.avatar_url">
+		<span class="name">{{reply.author.loginname}}</span>
 	</div>
 	<div class="reply-body">
 			<div class="reply-title" [innerHTML]="reply.content">
 			</div>
 			<div class="reply-tips">
-				<span>{{reply.author.loginname}}</span>
-				<time class="float-right mg_l10">{{reply.create_at | interval}}</time>
+				<time class="text-gray">{{reply.create_at | interval}}</time>
 			</div>
 	</div>
 </div>

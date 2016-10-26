@@ -1,7 +1,7 @@
 <div *ngIf="topic" class="topic">
 	<app-content-detail [topic]="topic"></app-content-detail>
 	<div class="mg_t10" [innerHTML]="topic.content"></div>
-	<div *ngIf="topic.replies && topic.replies.length"  class="reply-bar">评论</div>
+	<div class="reply-bar">{{ topic.replies && topic.replies.length ? '评论' : '暂无评论'}}</div>
 	<app-reply 
 	*ngFor="let reply of topic.replies;trackBy: id" 
 	[reply]="reply">
