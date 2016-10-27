@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { TopicService } from '../../service/topic.service';
 import { Topic } from '../../class/topic'
@@ -9,7 +9,7 @@ var Prism = require('prismjs')
   templateUrl: './topic.component.html',
   styleUrls: ['./topic.component.css']
 })
-export class TopicComponent implements OnInit {
+export class TopicComponent implements OnInit, AfterViewInit {
 
   topic: Topic
 
@@ -28,7 +28,12 @@ export class TopicComponent implements OnInit {
     })
   }
 
-  @HostListener('window:load', ['$event'])
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.load()
+    }, 100)
+  }
+
   load() {
     let doms = document.getElementsByTagName('pre')
     for (let i = 0; i < doms.length; i++) {
