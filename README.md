@@ -1,8 +1,9 @@
 # Cnode
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.17.
+> 这是本人学习angular2+Typescript的练手项目, 前端使用[angular2](https://angular.cn/)框架, 以及[material2](https://github.com/angular/material2)的部分组件，同时[Typescript](http://www.typescriptlang.org/)带的强类型和静态类型检查能够使开发更加稳定。
+后端是使用cnode提供的官方[api](https://cnodejs.org/api)实现的
 
-# Directory 
+## Directory 
 
 ```
 .
@@ -26,6 +27,15 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 └── package.json
 
 ```
+
+## Api
+
+https://cnodejs.org/api
+
+
+## angular-cli
+
+This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.17.
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
